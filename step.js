@@ -52,7 +52,7 @@ $.fn.stepSheet = function (options)
                     		var data = json[i]['p'].split(',');
                     		var time = formatSeconds(data[0]).toString();
                     		var userHash = data[6].toString();
-                    		var html = '<tr><td class="p50">'+json[i]['#text']+'</td><td class="p25">'+time+'</td><td class="p25"><a class="hash_'+userHash+'" href="javascript:;" onclick="getUser(\''+userHash+'\');return false;">查询</a></td></tr>'
+                    		var html = '<tr><td class="p50">'+json[i]['#text']+'</td><td class="p25">'+time+'</td><td class="p25"><a class="hash_'+userHash+'" href="javascript:;" target="_blank" onclick="getUser(\''+userHash+'\');return false;">查询</a></td></tr>'
                     		table.append(html);
                     	};
                     	
@@ -150,12 +150,13 @@ function getUser(hash){
 	var hash = hash.toString();
 	var midcrc = new BiliBili_midcrc();
 	var result = midcrc(hash);
-	
+	var obj = $(".hash_"+hash);
     if (result){
-        $(".hash_"+hash).text('已查到');
-        $(".hash_"+hash).attr('href','http://space.bilibili.com/'+result);
+        obj.text('已查到');
+        obj.removeAttr('onclick');
+        obj.attr('href','http://space.bilibili.com/'+result);
     }else{
-        $(".hash_"+hash).text('用户不存在');
+        obj.text('用户不存在');
     }
 	
 }
