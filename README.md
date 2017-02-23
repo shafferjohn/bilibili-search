@@ -30,3 +30,19 @@ License: MIT
 **0x03.** 生成哈希表，反查用户id
 
 [BiliBili_crc2mid](https://github.com/esterTion/BiliBili_crc2mid)
+
+
+###blablabla
+原本想做成纯前端单页面应用的，
+
+但由于[Same origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)的限制，
+
+不能请求站外的html、xml类型的页面，
+
+能力有限，也没找到可根据av号->cid的api，
+
+所以只能带了一点后端，
+
+有些遗憾。
+
+Fin.
