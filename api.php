@@ -3,6 +3,7 @@
 // author  Shaffer John
 // date    2016-2-23 11:54:01
 // version 1.0.0
+error_reporting(0);
 
 if(!isset($_GET['av']) || !$_GET['av'])
 	exit(json_encode(array('status' => 401, 'msg' => 'parameter error')));
