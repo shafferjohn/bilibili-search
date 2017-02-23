@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>bilibili 弹幕查询</title>
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="css.css" rel="stylesheet" />
+
+</head>
+
+<body style="background-color:#f4f5f7">
+
+<div class="wrapper">
+
+	<div id="step" class="card_wrap">
+		<!--S1-->
+		<div class="card_cont card1">
+			<div class="card">
+				<p class="step"><span>Step1. </span>请输入bilibili视频网址</p>
+
+				<ul class="select">
+					<li>
+						<label class="description">
+<PRE>
+/*
+	此步骤将根据视频url，
+	获取视频编号cid。
+*/
+</PRE>
+						</label>
+					</li>
+<li></li>
+					<li>
+					<div class="search">
+						<form action="" id="searchform" target="_blank">
+						<input name="keyword" type="text" class="search-keyword" id="search-keyword" autocomplete="off" accesskey="s" x-webkit-speech x-webkit-grammar="builtin:translate">
+						<button type="button" class="search-submit" id="step1"></button>
+						</form>
+					</div>
+					</li>
+
+				</ul>
+				<div class="card_bottom"><span><b>1</b>/3</span></div>
+			</div>
+		</div>
+		<!--S2-->
+		<div class="card_cont card2" >
+			<div class="card">
+				<p class="step"><span>Step2. </span>根据弹幕信息查询发送者</p>
+				
+				<ul class="select">
+				
+					<table class="content">
+						<tbody id="tbody" style="display:none">
+							<tr>
+								<th class="p50">弹幕</th>
+								<th class="p25">出现时间</th>
+								<th class="p25">用户</th>
+							</tr>
+
+							<tr>
+								<td colspan="3">
+									<div class="tanmu">
+									<table id="table">
+									</table>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+						<span id="message">正在加载...请等待</span>
+					</table>
+				</ul>
+				<div class="card_bottom"><a class="prev">上一页</a><a class="next">关于</a><span><b>2</b>/3</span></div>
+			</div>
+		</div>
+		<!--Q3-->
+		<div class="card_cont card3">
+			<div class="card">
+				<p class="step"><span>About </span>关于</p>
+				<ul class="select">
+					<li>
+						Author: Shaffer John
+					</li>
+					<li>
+						Homepage: <a href="http://www.shaffer.cn/" target="_blank">www.shaffer.cn</a>
+					</li>
+					<li>
+						<label class="description">
+<PRE>
+Introduction:
+	1. 请求视频url，解析html获取cid
+	2. 根据cid，请求对应弹幕信息xml
+	3. 生成crc32哈希表，反查用户id
+</PRE>
+						</label>
+					</li>
+					<li></li>
+					<li>
+						Github: <a href="https://github.com/shafferjohn/bilibili-search" target="_blank">bilibili-search</a>
+					</li>
+				</ul>
+				<div class="card_bottom"><a class="prev">上一页</a><span><b>3</b>/3</span></div>
+			</div>
+		</div>
+	</div><!--/card_wrap-->
+</div>
+	
+<script src="jquery-1.8.3.min.js"></script>
+<script src="crc32.js"></script>
+<script src="step.js"></script>
+<script>
+$(function(){
+	$("#step").stepSheet({});
+})
+
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p><a href="http://www.shaffer.cn/" target="_blank">www.shaffer.cn</a></p>
+</div>
+</body>
+</html>
+

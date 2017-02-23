@@ -1,0 +1,183 @@
+/**
+ * bilibili 弹幕查询
+ * @author  Shaffer John
+ * @date    2016-2-23 11:52:50
+ * @version 1.0.0
+ */
+body{line-height:1;color:#333;width:100%;margin:0 auto;-webkit-text-size-adjust:none;overflow-x:hidden}
+p,ol,ul,li{list-style:none}
+button{outline:0}
+label{font-weight:normal}
+img{width:100%;display:block}
+a img{word-break:break-all;word-wrap:break-word}
+a{color:#00a1d6; cursor:pointer; text-decoration: none;}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-text-size-adjust:none}
+html,body{padding:0; margin:0 auto; height:100%; font-size:15px; max-width:400px}
+*{-webkit-appearance:none; margin:0; padding:0}
+img{width:auto }
+input{outline:none;}
+
+/**
+ * CSS3 答题卡翻页效果 jQuery Transit 
+ * @authors Candice <286556658@qq.com>
+ * @date    2016-9-27 15:30:18
+ * @version v1.0.8
+ */
+.wrapper{width:100%; margin:0 auto;}
+.card_wrap{width:400px; height:584px; position:relative; overflow:hidden; display:none}
+.card_cont{width:100%; height:530px; box-sizing:border-box; margin:0 auto; position:absolute;  background:url(test_card_bg.png) no-repeat center top; background-size:100% auto; padding:8px 20px 18px; transition:all ease .5s; -webkit-transition:all ease .5s; -moz-transition:all ease .5s; -ms-transition:all ease .5s; transform:scale(0,0); -moz-transform:scale(0,0);-ms-transform:scale(0,0); -o-transform:scale(0,0); -webkit-transform:scale(0,0); bottom:0; display:none;}
+.card{width:360px; height:100%; position:relative; margin:0 auto; padding:0 18px; }
+.card .card_bottom{width:100%; position:absolute; bottom:28px; left:0; box-sizing:border-box; padding:0 28px}
+.card .card_bottom a{color:#00a1d6; cursor:pointer }
+.card .card_bottom span{float:right; color:#909090}.card .card_bottom span b{color:#666; font-weight:inherit}
+
+.card_cont.card1{ display:block;transform:scale(1,1) translate(0,0) !important ;  
+-ms-transform:scale(1,1) translate(0,0) !important ; 
+-moz-transform:scale(1,1) translate(0,0) !important ; 
+-webkit-transform:scale(1,1) translate(0,0) !important ; 
+}
+.card_cont.card2{ display:block;
+transform:scale(.85,.85) translate(0,-62px) !important ; 
+-ms-transform:scale(.85,.85) translate(0,-62px) !important ; 
+-moz-transform:scale(.85,.85) translate(0,-62px) !important ; 
+-webkit-transform:scale(.85,.85) translate(0,-62px) !important;
+}
+.card_cont.card3{ display:block;
+transform:scale(.72,.72) translate(0,-135px) !important ; 
+-ms-transform:scale(.72,.72) translate(0,-135px) !important ; 
+-moz-transform:scale(.72,.72) translate(0,-135px) !important ;
+-webkit-transform:scale(.72,.72) translate(0,-135px) !important ;
+}
+.card_cont.cardn{display:block;
+transform:translate(0,-1000px) !important; 
+-moz-transform:translate(0,-1000px) !important; 
+-ms-transform:translate(0,-1000px) !important;
+-webkit-transform:translate(0,-1000px) !important;}
+
+.step{display:table-cell; height:80px; font-size:16px; font-weight:100; color:#fff; line-height:1.4; vertical-align:middle; padding-left:2em;}
+.step span{margin-left:-1em}
+
+ul.select{margin-top:30px}
+ul.select li{height:46px; line-height:1.5; margin:0 0 20px 0}
+
+
+.search {
+    width: 268px;
+    height: 36px;
+    padding: 2px 2px 2px 2px;
+    background-color: #e5e9ef;
+    background-color: rgba(0,0,0,0.12);
+    border-radius: 8px;
+    margin: 0 0 0 20px;
+  }
+
+.search.search-focus #searchform {
+  background-color: #fff
+}
+
+.search #searchform {
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.88);
+  display: block;
+  height: 32px;
+  border-radius: 6px;
+  transition: .2s background-color
+}
+
+.search #searchform:hover {
+  background-color: #fff
+}
+
+.search .link-ranking {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.88);
+  border-radius: 4px;
+  width: 68px;
+  transition: .2s background-color
+}
+
+.search .link-ranking span {
+  padding-left: 26px;
+  color: #f25d8e;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background: url(images/base/icons.png) -659px -655px no-repeat
+}
+
+.search .link-ranking:hover {
+  background-color: #fff
+}
+
+.search .search-keyword {
+  float: left;
+  width: 225px;
+  color: #222;
+  font-size: 12px;
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent
+}
+
+.search button.search-submit {
+  display: block;
+  position: absolute;
+  right: 60px;
+  width: 40px;
+  min-width: 0;
+  cursor: pointer;
+  height: 32px;
+  background: url(images/base/icons.png) -653px -720px;
+  margin: 0;
+  padding: 0;
+  border: 0
+}
+
+.search button.search-submit:hover {
+  background-position: -718px -720px
+}
+
+input:-ms-input-placeholder,textarea:-ms-input-placeholder {
+  color: #99a2aa!important
+}
+
+.tanmu{
+  min-height:100px;
+  max-height:300px;
+  overflow-y:scroll;
+  
+}
+
+.content {
+  left: 0;
+  width: 100%;
+}
+
+#table td{
+  text-align: left;
+  padding: 2px 0px;
+  word-wrap:break-word;
+  word-break:break-all;
+}
+#table .p50 {width:50%;}
+#table .p25 {
+  text-align: right;
+  width:25%;
+}
+.content .p50 {width:50%;}
+.content .p25 {width:25%;}
+
+.next {
+  margin: 0px 0px 0px 20px;
+}
+
+
