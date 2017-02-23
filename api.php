@@ -23,7 +23,9 @@ $tanmu_xml = curl_request($tanmu_url, true);
 $dom = new DOMDocument();
 $dom->loadXML($tanmu_xml);
 
-print json_encode(getArray($dom->documentElement)['d']);
+$result = getArray($dom->documentElement);
+
+print json_encode($result['d']);
 
 function getArray($node) {
   $array = false;
